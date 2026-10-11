@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 650" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="a" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,1 L11,6 L0,11 z" fill="#0B5563"/></marker>
+<marker id="o" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,1 L11,6 L0,11 z" fill="#C2410C"/></marker>
+</defs>
+<rect width="1240" height="650" fill="#F7FBFB"/>
+<text x="620" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0B5563">FlexiCure system block diagram</text>
+
+<!-- PATCH -->
+<rect x="20" y="60" width="440" height="545" rx="16" fill="#E6F4F1" stroke="#0B5563" stroke-width="2"/>
+<text x="240" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B5563">DISPOSABLE PATCH (80 x 50 mm, swap every 2-4 days)</text>
+<rect x="32" y="96" width="416" height="160" rx="10" fill="none" stroke="#0B5563" stroke-dasharray="6 4"/>
+<text x="44" y="114" font-size="12" fill="#0B5563" font-weight="bold">SENSING (touches the skin)</text>
+<g font-size="13" fill="#0B3B44" text-anchor="middle">
+<rect x="44" y="124" width="190" height="52" rx="8" fill="#fff" stroke="#0B5563"/><text x="139" y="146">EMG electrodes</text><text x="139" y="164" font-size="11">printed Ag/AgCl, muscle signal</text>
+<rect x="246" y="124" width="190" height="52" rx="8" fill="#fff" stroke="#0B5563"/><text x="341" y="146">GSR electrode pair</text><text x="341" y="164" font-size="11">skin conductance (sweat, stress)</text>
+<rect x="44" y="188" width="190" height="52" rx="8" fill="#fff" stroke="#0B5563"/><text x="139" y="210">Strain layer</text><text x="139" y="228" font-size="11">abdominal wall stretch</text>
+<rect x="246" y="188" width="190" height="52" rx="8" fill="#fff" stroke="#0B5563"/><text x="341" y="210">Skin thermistor (NTC)</text><text x="341" y="228" font-size="11">real skin temperature</text>
+</g>
+<rect x="32" y="270" width="416" height="322" rx="10" fill="none" stroke="#C2410C" stroke-dasharray="6 4"/>
+<text x="44" y="288" font-size="12" fill="#C2410C" font-weight="bold">HEAT (own power, kept off the module battery)</text>
+<g font-size="13" fill="#0B3B44" text-anchor="middle">
+<rect x="44" y="300" width="190" height="60" rx="8" fill="#FFF4EC" stroke="#C2410C"/><text x="139" y="324">Single-use cell</text><text x="139" y="342" font-size="11">powers the heater only</text>
+<rect x="246" y="300" width="190" height="80" rx="8" fill="#FFF4EC" stroke="#C2410C"/><text x="341" y="323">Heater switch</text><text x="341" y="341" font-size="11">+ hardware over-temperature</text><text x="341" y="357" font-size="11">cutoff (works if firmware fails)</text>
+<rect x="246" y="430" width="190" height="60" rx="8" fill="#FFF4EC" stroke="#C2410C"/><text x="341" y="454">Thin-film heater</text><text x="341" y="472" font-size="11">target about 40 C</text>
+</g>
+<text x="44" y="520" font-size="12" fill="#0B3B44">Skin burn threshold is about 44 C.</text>
+<text x="44" y="538" font-size="12" fill="#0B3B44">Target is about 40 C, a 4 C margin.</text>
+<text x="44" y="566" font-size="12" fill="#0B3B44">Adhesive + skin-contact layer holds it all on.</text>
+<line x1="234" y1="330" x2="244" y2="330" stroke="#C2410C" stroke-width="2" marker-end="url(#o)"/>
+<line x1="341" y1="380" x2="341" y2="428" stroke="#C2410C" stroke-width="2" marker-end="url(#o)"/>
+
+<!-- CONNECTOR -->
+<rect x="470" y="96" width="46" height="496" rx="8" fill="#0B5563"/>
+<text transform="translate(500,344) rotate(-90)" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">CONTACT INTERFACE (spring pins, snap-in)</text>
+
+<!-- MODULE -->
+<rect x="526" y="60" width="404" height="545" rx="16" fill="#EEF2FF" stroke="#3730A3" stroke-width="2"/>
+<text x="728" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#3730A3">REUSABLE MODULE (about 25 x 20 x 4 mm, under 3 g)</text>
+<g font-size="13" fill="#1E1B4B" text-anchor="middle">
+<rect x="546" y="104" width="364" height="86" rx="8" fill="#fff" stroke="#3730A3"/><text x="728" y="128" font-weight="bold">Analog front end (AFE)</text><text x="728" y="148" font-size="11">amplify and filter tiny signals, then convert to numbers</text><text x="728" y="166" font-size="11">EMG, GSR, strain and skin temperature channels</text>
+<rect x="546" y="226" width="364" height="110" rx="8" fill="#fff" stroke="#3730A3"/><text x="728" y="250" font-weight="bold">Microcontroller + Bluetooth LE radio</text><text x="728" y="270" font-size="11">filter, reject motion, score tension</text><text x="728" y="288" font-size="11">decide heat on / off, enforce safe limits</text><text x="728" y="306" font-size="11">send small summary packets to the phone</text>
+<rect x="546" y="372" width="172" height="62" rx="8" fill="#fff" stroke="#3730A3"/><text x="632" y="396" font-weight="bold">Motion sensor</text><text x="632" y="414" font-size="11">(IMU) walking vs cramp</text>
+<rect x="738" y="372" width="172" height="62" rx="8" fill="#fff" stroke="#3730A3"/><text x="824" y="396" font-weight="bold">Flash memory</text><text x="824" y="414" font-size="11">logs while phone is away</text>
+<rect x="546" y="470" width="364" height="76" rx="8" fill="#fff" stroke="#3730A3"/><text x="728" y="494" font-weight="bold">Rechargeable battery + charger</text><text x="728" y="514" font-size="11">design target: 7 days of sensing per charge</text><text x="728" y="532" font-size="11">powers every module block, not the heater</text>
+</g>
+<g stroke="#3730A3" stroke-width="2" marker-end="url(#a)">
+<line x1="728" y1="190" x2="728" y2="224"/>
+<line x1="632" y1="372" x2="632" y2="338"/>
+<line x1="824" y1="338" x2="824" y2="370"/>
+<line x1="728" y1="470" x2="728" y2="436" stroke-dasharray="4 3"/>
+</g>
+
+<!-- arrows patch to module -->
+<line x1="448" y1="150" x2="470" y2="150" stroke="#0B5563" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="516" y1="150" x2="544" y2="150" stroke="#0B5563" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="493" y="84" font-size="10" fill="#0B5563" text-anchor="middle">analog</text>
+<path d="M546,310 L518,310" stroke="#C2410C" stroke-width="2.5" marker-end="url(#o)" fill="none"/>
+<path d="M470,310 L438,310" stroke="#C2410C" stroke-width="2.5" marker-end="url(#o)" fill="none"/>
+<text x="492" y="304" font-size="10" fill="#C2410C" text-anchor="middle"></text>
+<text x="728" y="590" font-size="11" fill="#C2410C" text-anchor="middle">Orange line: heat on/off command only. No heater current crosses the interface.</text>
+
+<!-- PHONE -->
+<rect x="1010" y="170" width="200" height="300" rx="22" fill="#fff" stroke="#0B3B44" stroke-width="3"/>
+<text x="1110" y="200" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B3B44">PHONE APP</text>
+<g font-size="12" fill="#0B3B44" text-anchor="middle">
+<rect x="1024" y="214" width="172" height="34" rx="6" fill="#E6F4F1"/><text x="1110" y="236">Comfort Check tap</text>
+<rect x="1024" y="256" width="172" height="34" rx="6" fill="#E6F4F1"/><text x="1110" y="278">Period Log</text>
+<rect x="1024" y="298" width="172" height="34" rx="6" fill="#E6F4F1"/><text x="1110" y="320">Comfort Forecast</text>
+<rect x="1024" y="340" width="172" height="34" rx="6" fill="#E6F4F1"/><text x="1110" y="362">Live signals + manual heat</text>
+<rect x="1024" y="382" width="172" height="34" rx="6" fill="#E6F4F1"/><text x="1110" y="404">Adaptive Comfort Engine</text>
+<rect x="1024" y="424" width="172" height="34" rx="6" fill="#E6F4F1"/><text x="1110" y="446">Patch status + refill</text>
+</g>
+<line x1="910" y1="280" x2="1008" y2="280" stroke="#3730A3" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="1008" y1="316" x2="912" y2="316" stroke="#3730A3" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="959" y="266" font-size="11" fill="#3730A3" text-anchor="middle">Bluetooth LE</text>
+<text x="959" y="334" font-size="10" fill="#3730A3" text-anchor="middle">heat commands</text>
+<!-- Respond+ -->
+<rect x="1010" y="500" width="200" height="70" rx="12" fill="#fff" stroke="#0B3B44" stroke-dasharray="6 4"/>
+<text x="1110" y="526" text-anchor="middle" font-size="12" font-weight="bold" fill="#0B3B44">Respond+ (roadmap)</text>
+<text x="1110" y="546" text-anchor="middle" font-size="11" fill="#0B3B44">third-party Bluetooth heat</text>
+<text x="1110" y="560" text-anchor="middle" font-size="11" fill="#0B3B44">or vibration devices</text>
+<line x1="1110" y1="500" x2="1110" y2="472" stroke="#0B3B44" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#a)"/>
+</svg>
